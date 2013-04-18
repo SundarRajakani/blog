@@ -1,6 +1,10 @@
 <?php 
-
 require_once('../config.php');
+
+// change .php
+// RewriteCond %{REQUEST_FILENAME} !-d
+// RewriteCond %{REQUEST_FILENAME}\.php -f
+// RewriteRule ^(.+)$ $1.php [L,QSA]
 
 try {
 	$conn = new PDO("mysql:host=$host;dbname=$database",$user,$pass);
