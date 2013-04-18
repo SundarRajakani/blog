@@ -3,19 +3,29 @@
 require_once('../app/config/config.php');
 
 try {
-	$conn = new PDO("mysql:host=$host;dbname=$dbname",$user,$pass);
+	$conn = new PDO("mysql:host=$host;dbname=$database",$user,$pass);
+	$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $conn->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
 
-	$sth = $conn->query('select * from posts');
+    $sth = $conn->prepare('select * from posts');
+    $sth->setFetchMode(PDO::FETCH_ASSOC);
+    $sth->execute();
 
-	$sth->setFetchMode(PDO::FETCH_ASSOC);
+    $result = $sth->fetchAll();
 
-	$out = array();
+    echo json_encode($result);
 
-	while ($row = $sth->fetch() ) {
-		$out[] = $row;
-	}
+// 	$sth = $conn->query('select * from posts');
 
-	return json_encode($out);
+// 	$sth->setFetchMode(PDO::FETCH_ASSOC);
+
+// 	$out = array();
+
+// 	while ($row = $sth->fetch() ) {
+// 		$out[] = $row;
+// 	}
+
+// 	return json_encode($out);
 
 } catch (PDOException $e) {
 	echo $e->getMessage();
