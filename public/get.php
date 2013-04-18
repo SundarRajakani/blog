@@ -3,7 +3,7 @@
 require_once('../config.php');
 
 try {
-	$conn = new PDO("mysql:host=$host;dbname=$dbname",$user,$pass);
+	$conn = new PDO("mysql:host=$host;dbname=$database",$user,$pass);
 
 	$sth = $conn->query('select * from posts');
 
@@ -16,6 +16,12 @@ try {
 } catch (PDOException $e) {
 	echo $e->getMessage();
 }
+
+
+// $pdo = new PDO('sqlite:users.db');
+// $stmt = $pdo->prepare('SELECT name FROM users WHERE id = :id');
+// $stmt->bindParam(':id', $_GET['id'], PDO::PARAM_INT); //<-- Automatically sanitized by PDO
+// $stmt->execute();
 
 
 ?>
