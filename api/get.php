@@ -12,7 +12,7 @@ try {
     $sth->execute();
 
     $result = $sth->fetchAll();
-
+    header('Content-Type: application/json');
     echo json_encode($result);
 
 // 	$sth = $conn->query('select * from posts');
