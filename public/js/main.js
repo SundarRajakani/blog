@@ -21,7 +21,7 @@ $(function () {
   // });
 
   $.getJSON(
-    'http://api.dunckr.com/?callback=?',
+    'http://api.dunckr.com/get?callback=?',
     function(data) {
       console.log(data);
   });

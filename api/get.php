@@ -4,7 +4,7 @@ require_once('../app/config/config.php');
 
 try {
 
-	if( ! isset($_GET['callback'])) 
+	if( isset($_GET['callback'])) 
 	{
 	// if(isset($_POST['get']) and !empty($_POST['get'])) {
 
