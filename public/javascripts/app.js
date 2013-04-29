@@ -92,11 +92,9 @@ window.require.register("application", function(exports, require, module) {
             BlogView = require('/views/blogview');
 
         var blog = new Blog();
-        blog.fetch();
-        console.log(blog);
 
         var headerView = new HeaderView();
-        var blogView = new BlogView(blog);
+        var blogView = new BlogView({ collection: blog});
         var footerView = new FooterView();
 
       }
@@ -139,8 +137,7 @@ window.require.register("models/blog", function(exports, require, module) {
 
     model: Post,
 
-    // url: '/api/get'
-    url: 'http://dunckr.com/api/get'
+    url: '/api/get'
 
   });
   
@@ -166,6 +163,8 @@ window.require.register("views/blogview", function(exports, require, module) {
     template: Template,
 
     initialize: function() {
+      this.collection.fetch();
+      console.log(this.collection);
       this.render();
     },
 
