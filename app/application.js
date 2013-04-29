@@ -10,11 +10,9 @@ Application = {
           BlogView = require('/views/blogview');
 
       var blog = new Blog();
-      blog.fetch();
-      console.log(blog);
 
       var headerView = new HeaderView();
-      var blogView = new BlogView(blog);
+      var blogView = new BlogView({ collection: blog});
       var footerView = new FooterView();
 
     }
