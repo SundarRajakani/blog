@@ -26,4 +26,4 @@ node_modules/
 tmp/
 
 # Brunch public folder
-public/
+#public/
