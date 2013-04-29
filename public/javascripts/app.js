@@ -164,7 +164,7 @@ window.require.register("views/blogview", function(exports, require, module) {
     template: Template,
 
     initialize: function() {
-      this.collection.fetch();
+      console.log(this.collection);
       this.render();
     },
 
