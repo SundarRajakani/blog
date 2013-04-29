@@ -143,42 +143,6 @@ window.require.register("models/blog", function(exports, require, module) {
   });
   
 });
-window.require.register("models/collection", function(exports, require, module) {
-  // Base class for all collections
-  module.exports = Backbone.Collection.extend({
-      
-  })
-  
-});
-window.require.register("models/item", function(exports, require, module) {
-  // Item
-  var Model = require('./model');
-
-  module.exports = Model.extend({
-    defaults: {
-      part1: 'hello',
-      part2: 'world'
-    }
-
-  });
-  
-});
-window.require.register("models/list", function(exports, require, module) {
-  var Item = require('./item');
-  module.exports = Backbone.Collection.extend({
-
-    model: Item
-
-  });
-  
-});
-window.require.register("models/model", function(exports, require, module) {
-  // Base class for all models
-  module.exports = Backbone.Model.extend({
-      
-  })
-  
-});
 window.require.register("models/post", function(exports, require, module) {
   
   module.exports = Backbone.Model.extend({
@@ -257,81 +221,6 @@ window.require.register("views/headerview", function(exports, require, module) {
     render: function() {
       this.$el.html(this.template);
       return this;
-    }
-
-  });
-  
-});
-window.require.register("views/home_view", function(exports, require, module) {
-  var View     = require('./view')
-    , template = require('./templates/home')
-
-  module.exports = View.extend({
-      id: 'home-view',
-      template: template
-  })
-  
-});
-window.require.register("views/itemview", function(exports, require, module) {
-  var View     = require('./view');
-      template = require('./templates/itemview');
-
-  module.exports = View.extend({
-      id: 'itemview',
-
-      template: template,
-
-      getRenderData: function(){
-        return this.model.attributes;
-      }
-
-  });
-  
-});
-window.require.register("views/listview", function(exports, require, module) {
-  // var View = require('./view'),
-  var ItemView = require('./itemview'),
-      List = require('../models/list'),
-      Item = require('../models/item'),
-      template = require('./templates/listview');
-
-  module.exports = Backbone.View.extend({
-
-    el: $('body'),
-
-    template: template,
-
-    events: {
-      'click button#add': 'addItem'
-    },
-
-    initialize: function() {
-      this.collection = new List();
-      this.collection.bind('add', this.appendItem);
-
-      this.counter = 0;
-      this.render();
-    },
-
-    render: function() {
-      this.counter++;
-      this.$el.html(this.template());
-    },
-
-    addItem: function() {
-      this.counter++;
-      var item = new Item();
-      item.set({
-        part2: item.get('part2') + ' ' + this.counter
-      });
-      this.collection.add(item);
-    },
-
-    appendItem: function(item) {
-      var itemView = new ItemView({
-        model: item
-      });
-      $('ul', this.el).append(itemView.render().el);
     }
 
   });
@@ -465,28 +354,4 @@ window.require.register("views/templates/post", function(exports, require, modul
     buffer += "\n	</ul>\n</div>";
     return buffer;
     });
-});
-window.require.register("views/view", function(exports, require, module) {
-  require('lib/view_helper');
-
-  // Base class for all views
-  module.exports = Backbone.View.extend({
-
-      initialize: function(){
-          this.render = _.bind(this.render, this);
-      },
-
-      template: function(){},
-      getRenderData: function(){},
-
-      render: function(){
-        this.$el.html(this.template(this.getRenderData()));
-        this.afterRender();
-        return this;
-      },
-
-      afterRender: function(){}
-
-  });
-  
 });
