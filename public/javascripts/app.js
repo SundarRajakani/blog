@@ -169,8 +169,6 @@ window.require.register("views/blogview", function(exports, require, module) {
           this.render();
         }
       });
-
-      this.render();
     },
 
     render: function() {
