@@ -7943,6 +7943,7 @@ header h1 {
 }
 body {
   background: url(../images/bg.png);
+  padding-top: 120px;
 }
 #logo {
   background-color: #f73b3b;
@@ -7960,7 +7961,7 @@ body {
 }
 div.content {
   font-family: 'Play', sans-serif;
-  color: #fac896;
+  color: #080808;
   text-align: center;
   margin-top: 1.5em;
 }
