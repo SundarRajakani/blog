@@ -8,8 +8,13 @@ module.exports = Backbone.View.extend({
   template: Template,
 
   initialize: function() {
-    this.collection.fetch();
-    console.log(this.collection);
+    this.collection.fetch({
+      success: function() {
+        console.log(this.collection);
+        this.render();
+      }
+    });
+
     this.render();
   },
 
