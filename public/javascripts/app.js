@@ -92,9 +92,13 @@ window.require.register("application", function(exports, require, module) {
             BlogView = require('/views/blogview');
 
         var blog = new Blog();
-
+        var p = blog.fetch();
+        p.done(function() {
+          console.log(blog);
+          var blogView = new BlogView({ collection: blog});
+        });
         var headerView = new HeaderView();
-        var blogView = new BlogView({ collection: blog});
+        // var blogView = new BlogView({ collection: blog});
         var footerView = new FooterView();
 
       }
@@ -163,12 +167,7 @@ window.require.register("views/blogview", function(exports, require, module) {
     template: Template,
 
     initialize: function() {
-      this.collection.fetch({
-        success: function() {
-          console.log(this.collection);
-          this.render();
-        }
-      },this);
+      this.render();
     },
 
     render: function() {
