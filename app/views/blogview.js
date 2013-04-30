@@ -8,17 +8,7 @@ module.exports = Backbone.View.extend({
   template: Template,
 
   initialize: function() {
-    // bindall render
-    // model on change render
-    // http://stackoverflow.com/questions/9220092/backbone-js-view-renders-before-model-fetch
-    // 
-    // // http://stackoverflow.com/questions/5681246/backbone-js-rendering-view
-    this.collection.fetch({
-      success: function() {
-        console.log(this);
-        this.render();
-      }
-    },this);
+    this.render();
   },
 
   render: function() {
