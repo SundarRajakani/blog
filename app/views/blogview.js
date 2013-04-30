@@ -13,7 +13,7 @@ module.exports = Backbone.View.extend({
         console.log(this.collection);
         this.render();
       }
-    });
+    },this);
   },
 
   render: function() {
