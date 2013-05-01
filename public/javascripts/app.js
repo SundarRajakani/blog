@@ -91,16 +91,21 @@ window.require.register("application", function(exports, require, module) {
         var Blog     = require('/models/blog'),
             BlogView = require('/views/blogview');
 
-        var blog = new Blog();
-        var p = blog.fetch();
-        p.done(function() {
-          console.log(blog);
-          var blogView = new BlogView({ collection: blog});
-        });
-        var headerView = new HeaderView();
-        // var blogView = new BlogView({ collection: blog});
-        var footerView = new FooterView();
+        // var blog = new Blog();
+        // var p = blog.fetch();
+        // p.done(function() {
+        //   console.log(blog);
+        //   var blogView = new BlogView({ collection: blog});
+        // });
 
+
+        var json = {"id":"1","title":"Hello World","description":"<b>Duis aute<\/b> irure dolor in reprehenderit in voluptate velit esse cillum Dolore eu fugiat nulla pariatur.","content":"<h1>Lorem ipsum dolor sit amet</h1> <p>consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, <span>commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Exc</span>quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea epteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>\n<p>Nostrud exercitation ullamco laboris nisi ut aliquip ex ea epteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>","thumb":"blank","date":"2013-04-03 14:30:31","category":"test"};
+        var blog = new Blog(json);
+        //var blogView = new BlogView({ collection: blog});
+
+
+        var headerView = new HeaderView();
+        //var footerView = new FooterView();
       }
   };
 
@@ -117,21 +122,21 @@ window.require.register("initialize", function(exports, require, module) {
   
 });
 window.require.register("lib/router", function(exports, require, module) {
-  var application = require('application')
+  var application = require('application');
 
   module.exports = Backbone.Router.extend({
       routes: {
           '': 'home'
+          // get particuarl post id
       },
-      
+
       home: function() {
-          $('body').html(application.homeView.render().el)
+          // $('body').html(application.homeView.render().el)
       }
-  })
+  });
   
 });
 window.require.register("lib/view_helper", function(exports, require, module) {
-  // Put handlebars.js helpers here
   
 });
 window.require.register("models/blog", function(exports, require, module) {
@@ -173,8 +178,8 @@ window.require.register("views/blogview", function(exports, require, module) {
     render: function() {
       this.$el.html(this.template);
       _.each(this.collection.models, function(item) {
-        var context = JSON.stringify(item);
-        this.renderEach(context);
+        console.log(item);
+        this.renderEach(item);
       }, this);
       return this;
     },
@@ -250,11 +255,9 @@ window.require.register("views/templates/blog", function(exports, require, modul
   module.exports = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
     this.compilerInfo = [2,'>= 1.0.0-rc.3'];
   helpers = helpers || Handlebars.helpers; data = data || {};
-    var buffer = "";
+    
 
 
-    buffer += "\n\n<div class=\"navbar navbar-inverse navbar-fixed-top\">\n      <div class=\"navbar-inner\">\n        <div class=\"container\">\n          <button type=\"button\" class=\"btn btn-navbar\" data-toggle=\"collapse\" data-target=\".nav-collapse\">\n            <span class=\"icon-bar\"></span>\n            <span class=\"icon-bar\"></span>\n            <span class=\"icon-bar\"></span>\n          </button>\n          <a class=\"brand\" href=\"#\">d</a>\n            <ul class=\"nav\">\n              <li><a href=\"#contact\">Contact</a></li>\n\n              <li class=\"active\"><a href=\"#\">twitter</a></li>\n              <li class=\"divider-vertical\"></li>\n              <li><a href=\"#about\">github</a></li>\n              <li class=\"divider-vertical\"></li>\n              <li><a href=\"#contact\">Contact</a></li>\n            </ul>\n        </div>\n      </div>\n    </div>";
-    return buffer;
     });
 });
 window.require.register("views/templates/footer", function(exports, require, module) {
@@ -274,7 +277,7 @@ window.require.register("views/templates/header", function(exports, require, mod
     
 
 
-    return "<h2>header!!</h2>\n<p>again</p>";
+    return "<row>\n  <div id=\"logo\">dunckr*</div>\n</row>\n<row>\n  <div class=\"menu-bar\">\n\n    <a href=\"https://twitter.com/dunckr\" alt=\"@dunckr\"><i class=\"icon-twitter icon-4x\"></i>\n</a>\n    <a href=\"http://github.com/dunckr\" alt=\"github/dunckr\"><i class=\"icon-github icon-4x\"></i></a>\n    <a href=\"mailto:d\" alt=\"Message\"><i class=\"icon-envelope-alt icon-4x\"></i></a>  \n  </div>\n</row>\n";
     });
 });
 window.require.register("views/templates/home", function(exports, require, module) {
@@ -285,35 +288,6 @@ window.require.register("views/templates/home", function(exports, require, modul
 
 
     return "<header>\n	<div class=\"container\">\n		<h1>Banana Pancakes</h1>\n	</div>\n</header>\n\n<div class=\"container\">\n	\n	<p class=\"lead\">Congratulations, your Brunch project is set up and very yummy. Thanks for using Banana Pancakes!</p>\n	\n	<div class=\"row\">\n		\n		<div class=\"span4\">\n			<h2>Banana Pancakes I</h2>\n			<p><a href=\"http://allrecipes.com/recipe/banana-pancakes-i/\"><img src=\"http://i.imgur.com/YlAsp.jpg\" /></a></p>\n			<blockquote>\n				<p>Crowd pleasing banana pancakes made from scratch. A fun twist on ordinary pancakes.</p>\n				<small><a href=\"http://allrecipes.com/cook/1871017/profile.aspx\">ADDEAN1</a> from <cite title=\"allrecepies.com\">allrecepies.com</cite></small>\n			</blockquote>\n			<p><a class=\"btn\" href=\"http://allrecipes.com/recipe/banana-pancakes-i/\">View Recipe &raquo;</a></p>\n		</div>\n		\n		<div class=\"span4\">\n			<h2>Banana Brown Sugar Pancakes</h2>\n			<p><a href=\"http://allrecipes.com/recipe/banana-brown-sugar-pancakes\"><img src=\"http://i.imgur.com/Yaq7Y.jpg\" /></a></p>\n			<blockquote>\n				<p>This recipe I made because I wanted to use up some instant banana oatmeal I had. I don't use syrup on it because of the sweetness from the oatmeal and brown sugar.</p>\n				<small><a href=\"http://allrecipes.com/cook/10041806/profile.aspx\">Nscoober2</a> from <cite title=\"allrecepies.com\">allrecepies.com</cite></small>\n			</blockquote>\n			<p><a class=\"btn\" href=\"http://allrecipes.com/recipe/banana-brown-sugar-pancakes\">View Recipe &raquo;</a></p>\n		</div>\n		\n		<div class=\"span4\">\n			<h2>Banana Pancakes II</h2>\n			<p><a href=\"http://allrecipes.com/recipe/banana-pancakes-ii/\"><img src=\"http://i.imgur.com/dEh09.jpg\" /></a></p>\n			<blockquote>\n				<p>These yummy pancakes are a snap to make.</p>\n				<small><a href=\"http://allrecipes.com/cook/18911/profile.aspx\">sal</a> from <cite title=\"allrecepies.com\">allrecepies.com</cite></small>\n			</blockquote>\n			<p><a class=\"btn\" href=\"http://allrecipes.com/recipe/banana-pancakes-ii/\">View Recipe &raquo;</a></p>\n		</div>\n		\n	</div>\n	\n</div>\n";
-    });
-});
-window.require.register("views/templates/itemview", function(exports, require, module) {
-  module.exports = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
-    this.compilerInfo = [2,'>= 1.0.0-rc.3'];
-  helpers = helpers || Handlebars.helpers; data = data || {};
-    var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression;
-
-
-    buffer += "<span>";
-    if (stack1 = helpers.part1) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-    else { stack1 = depth0.part1; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-    buffer += escapeExpression(stack1)
-      + " ";
-    if (stack1 = helpers.part2) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-    else { stack1 = depth0.part2; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-    buffer += escapeExpression(stack1)
-      + "</span>\n";
-    return buffer;
-    });
-});
-window.require.register("views/templates/listview", function(exports, require, module) {
-  module.exports = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
-    this.compilerInfo = [2,'>= 1.0.0-rc.3'];
-  helpers = helpers || Handlebars.helpers; data = data || {};
-    
-
-
-    return "<h1>ListView Test</h1>\n<button id='add'>Add list item</button>\n<ul></ul>\n";
     });
 });
 window.require.register("views/templates/post", function(exports, require, module) {
@@ -338,8 +312,8 @@ window.require.register("views/templates/post", function(exports, require, modul
       + "</h1>\n	<p>";
     if (stack1 = helpers.description) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
     else { stack1 = depth0.description; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-    buffer += escapeExpression(stack1)
-      + "</p>\n	<p>";
+    if(stack1 || stack1 === 0) { buffer += stack1; }
+    buffer += "</p>\n	<p>";
     if (stack1 = helpers.date) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
     else { stack1 = depth0.date; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
     buffer += escapeExpression(stack1)
@@ -347,11 +321,11 @@ window.require.register("views/templates/post", function(exports, require, modul
     if (stack1 = helpers.type) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
     else { stack1 = depth0.type; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
     buffer += escapeExpression(stack1)
-      + "</p>\n	";
+      + "</p>\n	<p>";
     if (stack1 = helpers.content) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
     else { stack1 = depth0.content; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-    buffer += escapeExpression(stack1)
-      + "\n	<ul> ";
+    if(stack1 || stack1 === 0) { buffer += stack1; }
+    buffer += "</p>\n	<ul> ";
     stack1 = helpers.each.call(depth0, depth0.type, {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
     if(stack1 || stack1 === 0) { buffer += stack1; }
     buffer += "\n	</ul>\n</div>";

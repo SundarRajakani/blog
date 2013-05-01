@@ -1,38 +1,66 @@
+@black: #080808;
+@orange: #f73b3b;
+
 header {
-	
-	height: 94px;
-	margin-bottom: 30px;
-	background: #4277b7 ;
-	
-	h1 {
-		text-indent: -9999px;
-		width: 500px;
-		height: 94px;
-		margin: 0;
-		padding: 0;
-		color: white;
-	}
+	margin: 0 auto;
+	float: none;
+	width: 300px;
+}
+#logo {
+	background-color: @orange;
+    color: #fff;
+    font-family: 'Lobster', cursive;
+    font-size: 50px;
+    -webkit-border-top-left-radius: 50px;
+	-moz-border-radius-topleft: 50px;
+	border-top-left-radius: 50px;
+    height: 130px;
+    line-height: 4;
+    text-align: right;
+}
+
+.menu-bar {
+	padding-top: 10px;
+	margin: 0 20px 0 20px;
+	text-align: center;
 	
 }
 
-@media (max-width: 767px) {
-	
-	// make the header span the entire page width even on small screens
+.menu-bar a {
+	margin: 0 10px 0 10px;
+	text-decoration: none;
+	color: @black;
+}
+
+.menu-bar a:hover {
+	color: grey;
+}
+
+/* smartphones, portrait iPhone, portrait 480x320 phones (Android) */ 
+@media (min-width:320px) { 
+
 	header {
-		margin-left: -20px;
-		margin-right: -20px;
-		padding-left: 20px;
-		padding-right: 20px;
+		padding-top: 2px;
+		width: 250px;
 	}
-	
+
+	#logo {
+		height: 80px;
+		line-height: 2;
+	}
+
 }
 
-@media (max-width: 540px) {
-	
-	// when the page is too narrow for the 500px logo, switch to a smaller, 300px version (also center it)
-	header h1 {
-		// background: url('http://i.imgur.com/8LfcwUs.png') no-repeat center;
-		width: 100%;
+/* portrait tablets, portrait iPad, e-readers (Nook/Kindle), landscape 800x480 phones (Android) */ 
+@media (min-width:600px) { 
+	header {
+		padding-top: 5px;
 	}
-	
+}
+
+/* big landscape tablets, laptops, and desktops */ 
+@media (min-width:1025px) { 
+	header {
+		padding-top: 20px;
+	}
 }

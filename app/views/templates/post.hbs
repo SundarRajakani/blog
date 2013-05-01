@@ -1,9 +1,9 @@
 <div class="span12">
 	<h1>Post {{ title }}</h1>
-	<p>{{ description }}</p>
+	<p>{{{ description }}}</p>
 	<p>{{ date }}</p>
 	<p>{{ type }}</p>
-	{{ content }}
+	<p>{{{content}}}</p>
 	<ul> {{#each type}}
 		<li>{{this}}</li>
 		{{/each}}

@@ -14,8 +14,8 @@ module.exports = Backbone.View.extend({
   render: function() {
     this.$el.html(this.template);
     _.each(this.collection.models, function(item) {
-      var context = JSON.stringify(item);
-      this.renderEach(context);
+      console.log(item);
+      this.renderEach(item);
     }, this);
     return this;
   },
