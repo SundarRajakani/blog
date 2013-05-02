@@ -7890,8 +7890,13 @@ a.badge:focus {
     overflow: visible !important;
   }
 }
+html,
 body {
   background: url(../images/bg.png);
+  height: 100%;
+}
+#container {
+  min-height: 100px;
 }
 /*!
  *  Font Awesome 3.0.2
@@ -8933,29 +8938,13 @@ ul.icons li [class*=" icon-"] {
   content: "\f115";
 }
 footer {
-  height: 94px;
-  margin-bottom: 30px;
+  color: grey;
 }
-footer h1 {
-  text-indent: -9999px;
-  width: 500px;
-  height: 94px;
-  margin: 0;
-  padding: 0;
-  color: white;
+.dis {
+  font-family: 'Play';
 }
-@media (max-width: 767px) {
-  footer {
-    margin-left: -20px;
-    margin-right: -20px;
-    padding-left: 20px;
-    padding-right: 20px;
-  }
-}
-@media (max-width: 540px) {
-  footer h1 {
-    width: 100%;
-  }
+.copy {
+  font-family: 'Lobster';
 }
 header {
   margin: 0 auto;
@@ -8964,14 +8953,12 @@ header {
 }
 #logo {
   background-color: #f73b3b;
-  color: #fff;
+  color: #ffffff;
   font-family: 'Lobster', cursive;
   font-size: 50px;
   -webkit-border-top-left-radius: 50px;
   -moz-border-radius-topleft: 50px;
   border-top-left-radius: 50px;
-  height: 130px;
-  line-height: 4;
   text-align: right;
 }
 .menu-bar {
@@ -8988,15 +8975,29 @@ header {
   color: grey;
 }
 /* smartphones, portrait iPhone, portrait 480x320 phones (Android) */@media (min-width: 320px) {
-  
+  header {
+    padding-top: 2px;
+  }
+  #logo {
+    height: 50;
+    line-height: 1;
+  }
 }
 /* portrait tablets, portrait iPad, e-readers (Nook/Kindle), landscape 800x480 phones (Android) */@media (min-width: 600px) {
   header {
     padding-top: 5px;
   }
+  #logo {
+    height: 80px;
+    line-height: 2;
+  }
 }
 /* big landscape tablets, laptops, and desktops */@media (min-width: 1025px) {
   header {
     padding-top: 20px;
+  }
+  #logo {
+    height: 130px;
+    line-height: 4;
   }
 }

@@ -101,11 +101,11 @@ window.require.register("application", function(exports, require, module) {
 
         var json = {"id":"1","title":"Hello World","description":"<b>Duis aute<\/b> irure dolor in reprehenderit in voluptate velit esse cillum Dolore eu fugiat nulla pariatur.","content":"<h1>Lorem ipsum dolor sit amet</h1> <p>consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, <span>commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Exc</span>quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea epteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>\n<p>Nostrud exercitation ullamco laboris nisi ut aliquip ex ea epteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>","thumb":"blank","date":"2013-04-03 14:30:31","category":"test"};
         var blog = new Blog(json);
-        //var blogView = new BlogView({ collection: blog});
+        var blogView = new BlogView({ collection: blog});
 
 
         var headerView = new HeaderView();
-        //var footerView = new FooterView();
+        var footerView = new FooterView();
       }
   };
 
@@ -267,7 +267,7 @@ window.require.register("views/templates/footer", function(exports, require, mod
     
 
 
-    return "<div class=\"span12\">\n	<p>The opinions stated here are my own and not that of my employers.</p>\n	<p>©duncanbeaton.com</p>\n</div>";
+    return " <div class=\"navbar navbar-fixed-bottom\">\n 	<p class=\"nav dis\">The opinions stated here are my own and not that of my employers.</p>\n    <p class=\"nav pull-right copy\">©duncanbeaton.com</p>\n</div>";
     });
 });
 window.require.register("views/templates/header", function(exports, require, module) {

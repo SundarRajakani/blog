@@ -1,5 +1,9 @@
 @black: #080808;
 @orange: #f73b3b;
+@red: #AB2720;
+@yellow: #F79D2F;
+@brown: #AB6D20;
+@white: #fff;
 
 header {
 	margin: 0 auto;
@@ -8,14 +12,12 @@ header {
 }
 #logo {
 	background-color: @orange;
-    color: #fff;
+    color: @white;
     font-family: 'Lobster', cursive;
     font-size: 50px;
     -webkit-border-top-left-radius: 50px;
 	-moz-border-radius-topleft: 50px;
 	border-top-left-radius: 50px;
-    height: 130px;
-    line-height: 4;
     text-align: right;
 }
 
@@ -38,17 +40,14 @@ header {
 
 /* smartphones, portrait iPhone, portrait 480x320 phones (Android) */ 
 @media (min-width:320px) { 
-
-	// header {
-	// 	padding-top: 2px;
-	// 	width: 250px;
-	// }
-
-	// #logo {
-	// 	height: 80px;
-	// 	line-height: 2;
-	// }
-
+	header {
+		padding-top: 2px;
+	}
+	#logo {
+		height: 50;
+		line-height: 1;
+	}
+	
 }
 
 /* portrait tablets, portrait iPad, e-readers (Nook/Kindle), landscape 800x480 phones (Android) */ 
@@ -56,11 +55,19 @@ header {
 	header {
 		padding-top: 5px;
 	}
+	#logo {
+		height: 80px;
+		line-height: 2;
+	}
 }
 
 /* big landscape tablets, laptops, and desktops */ 
 @media (min-width:1025px) { 
 	header {
 		padding-top: 20px;
+	}
+	#logo {
+		height: 130px;
+    	line-height: 4;
 	}
 }
