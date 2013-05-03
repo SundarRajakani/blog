@@ -14,7 +14,7 @@ try {
     $result = $sth->fetchAll();
     header('content-type: application/json; charset=utf-8');
 	echo json_encode($result);
-	}
+
 } catch (PDOException $e) {
 	echo $e->getMessage();
 }
