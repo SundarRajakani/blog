@@ -8957,7 +8957,7 @@ footer {
 header {
   margin: 0 auto;
   float: none;
-  width: 300px;
+  text-align: center;
 }
 #logo {
   background-color: #f73b3b;
@@ -8974,7 +8974,7 @@ header {
   text-align: center;
 }
 .menu-bar a {
-  margin: 0 20px 0 20px;
+  margin: 0 5% 0 5%;
   text-decoration: none;
   color: #080808;
 }
@@ -9007,6 +9007,15 @@ header {
     height: 130px;
     line-height: 4;
   }
+  .menu-bar {
+    text-align: left;
+  }
+  .menu-bar i {
+    line-height: 3;
+  }
+}
+post {
+  margin-bottom: 50px;
 }
 .content {
   margin: 0 auto;

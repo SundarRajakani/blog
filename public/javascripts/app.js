@@ -278,7 +278,7 @@ window.require.register("views/templates/header", function(exports, require, mod
     
 
 
-    return "<row>\n  <div id=\"logo\">dunckr*</div>\n</row>\n<row>\n  <div class=\"menu-bar\">\n\n    <a href=\"https://twitter.com/dunckr\" alt=\"@dunckr\"><i class=\"icon-twitter icon-4x\"></i>\n</a>\n    <a href=\"http://github.com/dunckr\" alt=\"github/dunckr\"><i class=\"icon-github icon-4x\"></i></a>\n    <a href=\"mailto:d\" alt=\"Message\"><i class=\"icon-envelope-alt icon-4x\"></i></a>  \n  </div>\n</row>\n";
+    return "<div id=\"logo\" class=\"span6\">dunckr*</div>\n<div class=\"menu-bar span5\">\n	<a href=\"https://twitter.com/dunckr\" alt=\"@dunckr\"><i class=\"icon-twitter icon-4x\"></i></a>\n	<a href=\"http://github.com/dunckr\" alt=\"github/dunckr\"><i class=\"icon-github icon-4x\"></i></a>\n	<a href=\"mailto:d\" alt=\"Message\"><i class=\"icon-envelope-alt icon-4x\"></i></a>  \n</div>\n\n\n\n\n<!-- <row>\n  <div id=\"logo\">dunckr*</div>\n</row>\n<row>\n  <div class=\"menu-bar\">\n    <a href=\"https://twitter.com/dunckr\" alt=\"@dunckr\"><i class=\"icon-twitter icon-4x\"></i>\n</a>\n    <a href=\"http://github.com/dunckr\" alt=\"github/dunckr\"><i class=\"icon-github icon-4x\"></i></a>\n    <a href=\"mailto:d\" alt=\"Message\"><i class=\"icon-envelope-alt icon-4x\"></i></a>  \n  </div>\n</row>\n -->";
     });
 });
 window.require.register("views/templates/post", function(exports, require, module) {
@@ -300,11 +300,11 @@ window.require.register("views/templates/post", function(exports, require, modul
     if (stack1 = helpers.title) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
     else { stack1 = depth0.title; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
     buffer += escapeExpression(stack1)
-      + "</h1>\n	<p>";
+      + " <p>";
     if (stack1 = helpers.date) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
     else { stack1 = depth0.date; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
     buffer += escapeExpression(stack1)
-      + "</p>\n	<p>";
+      + "</p></h1>\n	<p>";
     if (stack1 = helpers.content) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
     else { stack1 = depth0.content; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
     if(stack1 || stack1 === 0) { buffer += stack1; }
