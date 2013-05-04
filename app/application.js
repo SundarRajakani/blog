@@ -23,7 +23,7 @@ Application = {
 
 
       var headerView = new HeaderView();
-      var footerView = new FooterView();
+      //var footerView = new FooterView();
     }
 };
 
