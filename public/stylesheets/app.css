@@ -8999,7 +8999,7 @@ header {
     line-height: 2;
   }
   .menu-bar i {
-    line-height: 1;
+    line-height: 2;
   }
 }
 /* big landscape tablets, laptops, and desktops */@media (min-width: 1025px) {
