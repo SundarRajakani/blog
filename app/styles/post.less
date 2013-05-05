@@ -35,144 +35,144 @@ post .des {
 
 }
 
-/* desert scheme ported from vim to google prettify */
-pre.prettyprint { display: block; background-color: #333 }
-pre .nocode { background-color: none; color: #000 }
-pre .str { color: #ffa0a0 } /* string  - pink */
-pre .kwd { color: #f0e68c; font-weight: bold }
-pre .com { color: #87ceeb } /* comment - skyblue */
-pre .typ { color: #98fb98 } /* type    - lightgreen */
-pre .lit { color: #cd5c5c } /* literal - darkred */
-pre .pun { color: #fff }    /* punctuation */
-pre .pln { color: #fff }    /* plaintext */
-pre .tag { color: #f0e68c; font-weight: bold } /* html/xml tag    - lightyellow */
-pre .atn { color: #bdb76b; font-weight: bold } /* attribute name  - khaki */
-pre .atv { color: #ffa0a0 } /* attribute value - pink */
-pre .dec { color: #98fb98 } /* decimal         - lightgreen */
+// /* desert scheme ported from vim to google prettify */
+// pre { display: block; background-color: #333 }
+// pre .nocode { background-color: none; color: #000 }
+// pre .str { color: #ffa0a0 } /* string  - pink */
+// pre .kwd { color: #f0e68c; font-weight: bold }
+// pre .com { color: #87ceeb } /* comment - skyblue */
+// pre .typ { color: #98fb98 } /* type    - lightgreen */
+// pre .lit { color: #cd5c5c } /* literal - darkred */
+// pre .pun { color: #fff }    /* punctuation */
+// pre .pln { color: #fff }    /* plaintext */
+// pre .tag { color: #f0e68c; font-weight: bold } /* html/xml tag    - lightyellow */
+// pre .atn { color: #bdb76b; font-weight: bold } /* attribute name  - khaki */
+// pre .atv { color: #ffa0a0 } /* attribute value - pink */
+// pre .dec { color: #98fb98 } /* decimal         - lightgreen */
 
-/* Specify class=linenums on a pre to get line numbering */
-ol.linenums { margin-top: 0; margin-bottom: 0; color: #AEAEAE } /* IE indents via margin-left */
-li.L0,li.L1,li.L2,li.L3,li.L5,li.L6,li.L7,li.L8 { list-style-type: none }
-/* Alternate shading for lines */
-li.L1,li.L3,li.L5,li.L7,li.L9 { }
+//  Specify class=linenums on a pre to get line numbering 
+// ol.linenums { margin-top: 0; margin-bottom: 0; color: #AEAEAE } /* IE indents via margin-left */
+// li.L0,li.L1,li.L2,li.L3,li.L5,li.L6,li.L7,li.L8 { list-style-type: none }
+// /* Alternate shading for lines */
+// li.L1,li.L3,li.L5,li.L7,li.L9 { }
 
-@media print {
-  pre.prettyprint { background-color: none }
-  pre .str, code .str { color: #060 }
-  pre .kwd, code .kwd { color: #006; font-weight: bold }
-  pre .com, code .com { color: #600; font-style: italic }
-  pre .typ, code .typ { color: #404; font-weight: bold }
-  pre .lit, code .lit { color: #044 }
-  pre .pun, code .pun { color: #440 }
-  pre .pln, code .pln { color: #000 }
-  pre .tag, code .tag { color: #006; font-weight: bold }
-  pre .atn, code .atn { color: #404 }
-  pre .atv, code .atv { color: #060 }
-}
+// @media print {
+//   pre { background-color: none }
+//   pre .str, code .str { color: #060 }
+//   pre .kwd, code .kwd { color: #006; font-weight: bold }
+//   pre .com, code .com { color: #600; font-style: italic }
+//   pre .typ, code .typ { color: #404; font-weight: bold }
+//   pre .lit, code .lit { color: #044 }
+//   pre .pun, code .pun { color: #440 }
+//   pre .pln, code .pln { color: #000 }
+//   pre .tag, code .tag { color: #006; font-weight: bold }
+//   pre .atn, code .atn { color: #404 }
+//   pre .atv, code .atv { color: #060 }
+// }
 
 
 /*
   IR_Black style (c) Vasily Mikhailitchenko <vaskas@programica.ru>
 */
 
-// pre code {
-//   color: #f8f8f8;
-// }
+pre code {
+  color: #f8f8f8;
+}
 
 pre {
   background: #000;
 }
 
-// pre .shebang,
-// pre .comment,
-// pre .template_comment,
-// pre .javadoc {
-//   color: #7c7c7c;
-// }
+pre .shebang,
+pre .comment,
+pre .template_comment,
+pre .javadoc {
+  color: #7c7c7c;
+}
 
-// pre .keyword,
-// pre .tag,
-// pre .ruby .function .keyword,
-// pre .tex .command {
-//   color: #96CBFE;
-// }
+pre .keyword,
+pre .tag,
+pre .ruby .function .keyword,
+pre .tex .command {
+  color: #96CBFE;
+}
 
-// pre .function .keyword,
-// pre .sub .keyword,
-// pre .method,
-// pre .list .title {
-//   color: #FFFFB6;
-// }
+pre .function .keyword,
+pre .sub .keyword,
+pre .method,
+pre .list .title {
+  color: #FFFFB6;
+}
 
-// pre .string,
-// pre .attribute .value,
-// pre .cdata,
-// pre .filter .argument,
-// pre .attr_selector,
-// pre .apache .cbracket,
-// pre .date {
-//   color: #A8FF60;
-// }
+pre .string,
+pre .attribute .value,
+pre .cdata,
+pre .filter .argument,
+pre .attr_selector,
+pre .apache .cbracket,
+pre .date {
+  color: #A8FF60;
+}
 
-// pre .subst {
-//   color: #DAEFA3;
-// }
+pre .subst {
+  color: #DAEFA3;
+}
 
-// pre .regexp {
-//   color: #E9C062;
-// }
+pre .regexp {
+  color: #E9C062;
+}
 
-// pre .function .title,
-// pre .sub .identifier,
-// pre .pi,
-// pre .decorator,
-// pre .ini .title,
-// pre .tex .special {
-//   color: #FFFFB6;
-// }
+pre .function .title,
+pre .sub .identifier,
+pre .pi,
+pre .decorator,
+pre .ini .title,
+pre .tex .special {
+  color: #FFFFB6;
+}
 
-// pre .class .title,
-// pre .constant,
-// pre .smalltalk .class,
-// pre .javadoctag,
-// pre .yardoctag,
-// pre .phpdoc,
-// pre .nginx .built_in {
-//   color: #FFFFB6;
-// }
+pre .class .title,
+pre .constant,
+pre .smalltalk .class,
+pre .javadoctag,
+pre .yardoctag,
+pre .phpdoc,
+pre .nginx .built_in {
+  color: #FFFFB6;
+}
 
-// pre .symbol,
-// pre .ruby .symbol .string,
-// pre .ruby .symbol .keyword,
-// pre .ruby .symbol .keymethods,
-// pre .number,
-// pre .variable,
-// pre .vbscript,
-// pre .literal {
-//   color: #C6C5FE;
-// }
+pre .symbol,
+pre .ruby .symbol .string,
+pre .ruby .symbol .keyword,
+pre .ruby .symbol .keymethods,
+pre .number,
+pre .variable,
+pre .vbscript,
+pre .literal {
+  color: #C6C5FE;
+}
 
-// pre .css .keyword {
-//   color: #96CBFE;
-// }
+pre .css .keyword {
+  color: #96CBFE;
+}
 
-// pre .css .rule .keyword,
-// pre .css .id {
-//   color: #FFFFB6;
-// }
+pre .css .rule .keyword,
+pre .css .id {
+  color: #FFFFB6;
+}
 
-// pre .css .class {
-//   color: #FFF;
-// }
+pre .css .class {
+  color: #FFF;
+}
 
-// pre .hexcolor {
-//   color: #C6C5FE;
-// }
+pre .hexcolor {
+  color: #C6C5FE;
+}
 
-// pre .number {
-//   color:#FF73FD;
-// }
+pre .number {
+  color:#FF73FD;
+}
 
-// pre .tex .formula {
-//   opacity: 0.7;
-// }
+pre .tex .formula {
+  opacity: 0.7;
+}

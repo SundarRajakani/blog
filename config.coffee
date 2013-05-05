@@ -47,8 +47,8 @@ exports.config =
                     'vendor/scripts/bootstrap/bootstrap-typeahed.js',
                     
                     #
-                    'vendor/scripts/prettify/prettify.js',
-                    'vendor/scripts/prettify/run_prettify.js'
+                    #'vendor/scripts/prettify/prettify.js',
+                    #'vendor/scripts/prettify/run_prettify.js'
 
                 ]
                 
@@ -60,7 +60,7 @@ exports.config =
                   'vendor/styles/bootstrap/bootstrap.less',
 
                   #
-                  'vendor/styles/prettify.css'
+                  #'vendor/styles/prettify.css'
                 ]
             
         templates:
