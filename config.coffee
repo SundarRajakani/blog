@@ -46,13 +46,20 @@ exports.config =
                     'vendor/scripts/bootstrap/bootstrap-tab.js',
                     'vendor/scripts/bootstrap/bootstrap-typeahed.js',
                     
+                    #
+                    'vendor/scripts/prettify/prettify.js'
                 ]
                 
         stylesheets:
             defaultExtension: 'less'
             joinTo: 'stylesheets/app.css'
             order:
-                before: ['vendor/styles/bootstrap/bootstrap.less']
+                before: [
+                  'vendor/styles/bootstrap/bootstrap.less',
+
+                  #
+                  'vendor/styles/prettify.css'
+                ]
             
         templates:
             defaultExtension: 'hbs'
