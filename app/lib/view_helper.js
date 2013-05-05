@@ -5,7 +5,7 @@ Handlebars.registerHelper('dateFormat', function(timestamp) {
   console.log(timestamp);
   console.log(months);
   console.log(date);
-  return date.getDay() + ' ' +
+  return date.getDate() + ' ' +
          months[date.getMonth()] + ' ' +
          date.getFullYear();
 });
