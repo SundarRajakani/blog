@@ -47,7 +47,9 @@ exports.config =
                     'vendor/scripts/bootstrap/bootstrap-typeahed.js',
                     
                     #
-                    'vendor/scripts/prettify/prettify.js'
+                    'vendor/scripts/prettify/prettify.js',
+                    'vendor/scripts/prettify/run_prettify.js'
+
                 ]
                 
         stylesheets:
