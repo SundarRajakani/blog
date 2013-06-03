@@ -27,3 +27,6 @@ tmp/
 
 # Brunch public folder
 #public/
+
+# Credentials
+config.php
